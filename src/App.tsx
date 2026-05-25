@@ -22,12 +22,12 @@ const experiences = [
     company: 'Estudologia',
     period: 'Aug 2024 – Jan 2026',
     bullets: [
-      'Built and maintained production Ruby and React systems serving 10,000+ low-income students, expanding access to interactive academic content and improving student engagement.',
-      'Partnered with product owners and stakeholders to refine business rules, clarify requirements, and translate product needs into production-ready features.',
-      'Built a user-facing quiz game feature end to end, including database modeling, backend APIs, background jobs, AI-generated questions, and real-time game updates with WebSockets.',
-      'Built Redis-based queues and inter-service communication for an automated essay grading pipeline powered by the OpenAI API.',
-      'Optimized a critical production API used across the platform, reducing response time from 20s to 300ms.',
-      'Expanded API test coverage from 50% to 80% by writing unit tests for 5,000+ lines of critical backend code.',
+      'Delivered high-quality, robust production code across multiple Ruby and React systems, including academic management platforms used by 10,000+ students and a commercial library management system.',
+      'Worked closely with stakeholders and product owners to refine business rules and uncover gaps in proposed workflows to fulfill business requirements.',
+      'Collaborated with designers and creative directors to turn complex workflows into intuitive UI/UX for end users.',
+      'Designed and implemented the data models, APIs, and frontend interfaces behind user-facing features.',
+      'Built a real-time quiz game with AI-generated questions, helping students learn while competing with each other.',
+      'Expanded API test coverage from 50% to 80% by writing unit tests for critical API features.',
     ],
   },
   {
