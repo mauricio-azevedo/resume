@@ -35,10 +35,43 @@ a {
 }
 
 .toolbar {
-  width: var(--page-width);
-  margin: 0 auto 16px;
+  align-items: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  margin: 0 auto 16px;
+  width: var(--page-width);
+}
+
+.language-toggle {
+  background: #ffffff;
+  border: 1px solid rgba(113, 128, 154, 0.24);
+  border-radius: 999px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.language-button {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 8px 11px;
+}
+
+.language-button:hover,
+.language-button:focus-visible {
+  color: var(--blue);
+}
+
+.language-button.is-active {
+  background: var(--blue);
+  color: #ffffff;
 }
 
 .download-button {
@@ -64,7 +97,8 @@ a {
   opacity: 0.72;
 }
 
-.download-button:focus-visible {
+.download-button:focus-visible,
+.language-button:focus-visible {
   outline: 3px solid rgba(36, 84, 230, 0.2);
   outline-offset: 3px;
 }
