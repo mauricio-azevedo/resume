@@ -35,12 +35,12 @@ const experiences = [
     company: 'Inkluziva',
     period: 'Feb 2024 – Aug 2024',
     bullets: [
-      'Led technical delivery as the primary engineer on the team, working closely with stakeholders to shape requirements and define solutions.',
-      'Led the development of a React frontend and Node.js backend for an automated trading system on Binance.',
-      'Automated the company’s tax reporting for crypto trading, eliminating human error and saving 20 hours of manual work per week.',
-      'Remediated 3 critical security vulnerabilities and strengthened platform security controls.',
-      'Built the Angular frontend and Node.js backend for a digital wallet used in crypto trading, integrating PIX and credit card payment APIs and implementing cookie-based JWT authentication with refresh token flows.',
-      'Developed a feature for creating fully customizable NFTs in seconds, with no blockchain knowledge required.',
+      'Worked alongside stakeholders to prototype the company’s Binance trading automation system and define the first version of its trading workflows.',
+      'Built and shipped the React frontend and Node.js backend for the trading automation platform.',
+      'Automated crypto trading tax reporting, eliminating manual errors and saving 20 hours of work per week.',
+      'Identified and remediated 3 critical security vulnerabilities across the platform.',
+      'Worked on a crypto trading digital wallet, integrating payment APIs and authentication logic.',
+      'Built a feature for creating customizable NFTs in seconds, without requiring users to understand blockchain concepts.',
     ],
   },
   {
