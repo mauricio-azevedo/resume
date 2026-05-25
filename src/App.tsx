@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import html2canvas from 'html2canvas'
+import { jsPDF } from 'jspdf'
 import './App.css'
 
 const emailHref =
@@ -59,22 +62,62 @@ const experiences = [
   },
 ]
 
-function handleDownloadPdf() {
-  const previousTitle = document.title
-  document.title = 'MauricioAzevedo_Resume'
-  window.print()
+async function downloadResumePdf() {
+  const resume = document.querySelector<HTMLElement>('.resume-page')
 
-  window.setTimeout(() => {
-    document.title = previousTitle
-  }, 750)
+  if (!resume) {
+    throw new Error('Resume element was not found.')
+  }
+
+  document.body.classList.add('pdf-exporting')
+
+  await new Promise((resolve) => window.requestAnimationFrame(resolve))
+
+  const canvas = await html2canvas(resume, {
+    backgroundColor: '#ffffff',
+    scale: 2,
+    useCORS: true,
+    windowWidth: resume.scrollWidth,
+    windowHeight: resume.scrollHeight,
+  })
+
+  const imageData = canvas.toDataURL('image/jpeg', 0.98)
+  const pdf = new jsPDF({
+    orientation: 'portrait',
+    unit: 'in',
+    format: 'letter',
+    compress: true,
+  })
+
+  pdf.addImage(imageData, 'JPEG', 0, 0, 8.5, 11)
+  pdf.save('MauricioAzevedo_Resume.pdf')
+
+  document.body.classList.remove('pdf-exporting')
 }
 
 function App() {
+  const [isDownloading, setIsDownloading] = useState(false)
+
+  async function handleDownloadPdf() {
+    try {
+      setIsDownloading(true)
+      await downloadResumePdf()
+    } finally {
+      document.body.classList.remove('pdf-exporting')
+      setIsDownloading(false)
+    }
+  }
+
   return (
     <main className="resume-shell">
       <div className="toolbar" aria-label="Resume actions">
-        <button type="button" className="download-button" onClick={handleDownloadPdf}>
-          Baixar PDF
+        <button
+          type="button"
+          className="download-button"
+          onClick={handleDownloadPdf}
+          disabled={isDownloading}
+        >
+          {isDownloading ? 'Gerando PDF...' : 'Baixar PDF'}
         </button>
       </div>
 
