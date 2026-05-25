@@ -336,7 +336,6 @@ function App() {
               <article className="side-item">
                 <h3>UDF</h3>
                 <p>Systems Analysis and Development</p>
-                <p>2018 – 2023</p>
               </article>
             </section>
           </aside>
