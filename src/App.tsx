@@ -49,8 +49,7 @@ const experiences = [
     period: 'Apr 2023 – Jan 2024',
     bullets: [
       'Built and shipped the Angular frontend for an educational platform that helped public-school students engage with literature and prepare for Brazil’s college entrance exams.',
-      'Built the React frontend for a security device management system used in homes and buildings.',
-      'Optimized critical pages, reducing load times from up to 6 seconds to under 1 second.',
+      'Designed and delivered the platform’s admin panel for managing published content and creators.',
     ],
   },
   {
