@@ -189,7 +189,11 @@ h2 {
   min-width: 0;
 }
 
-.item-heading strong,
+.item-heading strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
 .side-item h3,
 .skill-group h3,
 .compact-section strong {
