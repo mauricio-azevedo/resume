@@ -25,7 +25,6 @@ const experiences = [
       'Delivered high-quality, robust production code across multiple Ruby and React systems, including academic management platforms used by 10,000+ students and a commercial library management system.',
       'Worked closely with stakeholders and product owners to refine business rules and uncover gaps in proposed workflows to fulfill business requirements.',
       'Collaborated with designers and creative directors to turn complex workflows into intuitive UI/UX for end users.',
-      'Designed and implemented the data models, APIs, and frontend interfaces behind user-facing features.',
       'Built a real-time quiz game with AI-generated questions, helping students learn while competing with each other.',
       'Expanded API test coverage from 50% to 80% by writing unit tests for critical API features.',
     ],
