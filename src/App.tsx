@@ -179,6 +179,8 @@ async function downloadResumePdf() {
 
   await new Promise((resolve) => window.requestAnimationFrame(resolve));
 
+  const resumeRect = resume.getBoundingClientRect();
+
   const canvas = await html2canvas(resume, {
     backgroundColor: "#ffffff",
     scale: 2,
@@ -187,6 +189,8 @@ async function downloadResumePdf() {
     windowHeight: resume.scrollHeight,
   });
 
+  const pdfWidth = 8.5;
+  const pdfHeight = 11;
   const imageData = canvas.toDataURL("image/jpeg", 0.98);
   const pdf = new jsPDF({
     orientation: "portrait",
@@ -195,7 +199,23 @@ async function downloadResumePdf() {
     compress: true,
   });
 
-  pdf.addImage(imageData, "JPEG", 0, 0, 8.5, 11);
+  pdf.addImage(imageData, "JPEG", 0, 0, pdfWidth, pdfHeight);
+
+  const scaleX = pdfWidth / resumeRect.width;
+  const scaleY = pdfHeight / resumeRect.height;
+
+  resume.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((link) => {
+    const linkRect = link.getBoundingClientRect();
+
+    pdf.link(
+      (linkRect.left - resumeRect.left) * scaleX,
+      (linkRect.top - resumeRect.top) * scaleY,
+      linkRect.width * scaleX,
+      linkRect.height * scaleY,
+      { url: link.href },
+    );
+  });
+
   pdf.save("MauricioAzevedo_Resume.pdf");
 
   document.body.classList.remove("pdf-exporting");
