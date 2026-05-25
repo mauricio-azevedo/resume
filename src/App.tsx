@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const emailHref =
-  "mailto:mauricio.mendonca.azevedo@gmail.com?subject=Software%20Engineering%20Opportunity%20-%20%3CCompany%3E&body=Hi%20Maur%C3%ADcio%2C%0D%0A%0D%0AI%20saw%20your%20resume%20and%20would%20like%20to%20discuss%20a%20Senior%20Software%20Engineer%20role%20at%20%3CCompany%3E.%20Do%20you%20have%20time%20for%20a%20quick%20call%20this%20week%3F%0D%0A%0D%0AThanks%2C%0D%0A%3CYour%20Name%3E%0D%0A%3CCompany%3E%0D%0A%3CPhone%3E";
+const emailHref = "mailto:mauricio.mendonca.azevedo@gmail.com";
 
 type Language = "en" | "pt";
 type ContactIconName = "email" | "phone" | "github" | "linkedin" | "portfolio";
@@ -444,10 +443,10 @@ function App() {
             <section className="resume-section compact-section">
               <h2>{content.languagesTitle}</h2>
               <p>
-                <strong>English:</strong> {content.languages.english}
+                <strong>{language === "pt" ? "Inglês" : "English"}:</strong> {content.languages.english}
               </p>
               <p>
-                <strong>Portuguese:</strong> {content.languages.portuguese}
+                <strong>{language === "pt" ? "Português" : "Portuguese"}:</strong> {content.languages.portuguese}
               </p>
             </section>
 
