@@ -132,6 +132,10 @@ function App() {
               <span>|</span>
               <a href="tel:+5561999997353">+55 61 99999-7353</a>
               <span>|</span>
+              <a href="https://mauricioazevedo.vercel.app/" target="_blank" rel="noreferrer">
+                Portfolio
+              </a>
+              <span>|</span>
               <a href="https://github.com/mauricio-azevedo" target="_blank" rel="noreferrer">
                 GitHub
               </a>
