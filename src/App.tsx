@@ -10,9 +10,8 @@ const skills = [
   ['Languages', 'TypeScript, JavaScript, Java, Ruby'],
   ['Frontend', 'React, Angular, Tailwind CSS'],
   ['Backend', 'Node.js, NestJS, Express, Spring Boot, Ruby on Rails'],
-  ['Databases', 'PostgreSQL, Oracle, Redis'],
-  ['Cloud & DevOps', 'AWS, Docker, GitHub Actions'],
-  ['ORM/Data Access', 'Prisma, TypeORM, Active Record'],
+  ['Data', 'PostgreSQL, Oracle, Redis, Prisma, TypeORM, Active Record'],
+  ['Tools', 'AWS, Docker, GitHub Actions'],
   ['Testing', 'Jest, JUnit, RSpec'],
 ]
 
@@ -175,7 +174,7 @@ function App() {
 
           <aside className="side-column">
             <section className="resume-section skills-section">
-              <h2>Technical Skills</h2>
+              <h2>Skills</h2>
               <div className="skill-list">
                 {skills.map(([label, value]) => (
                   <div className="skill-group" key={label}>
