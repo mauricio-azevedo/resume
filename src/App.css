@@ -57,6 +57,11 @@ a {
   background: #333333;
 }
 
+.download-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .download-button:focus-visible {
   outline: 3px solid rgba(17, 85, 204, 0.35);
   outline-offset: 3px;
@@ -214,6 +219,15 @@ li {
   margin-bottom: 0;
 }
 
+body.pdf-exporting .resume-page {
+  width: var(--page-width);
+  height: var(--page-height);
+  min-height: var(--page-height);
+  padding: var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
+  box-shadow: none;
+  overflow: hidden;
+}
+
 @media (max-width: 760px) {
   .resume-shell {
     padding: 16px 10px 32px;
@@ -253,6 +267,31 @@ li {
   h1 span {
     display: block;
     margin: 4px 0 0;
+  }
+
+  body.pdf-exporting .resume-page {
+    width: var(--page-width);
+    height: var(--page-height);
+    min-height: var(--page-height);
+    padding: var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
+    overflow: hidden;
+  }
+
+  body.pdf-exporting .resume-header,
+  body.pdf-exporting .item-heading {
+    display: flex;
+  }
+
+  body.pdf-exporting .location,
+  body.pdf-exporting h1,
+  body.pdf-exporting h1 span,
+  body.pdf-exporting .contact-line {
+    white-space: nowrap;
+  }
+
+  body.pdf-exporting h1 span {
+    display: inline;
+    margin-left: 2pt;
   }
 }
 
