@@ -48,9 +48,9 @@ const experiences = [
     company: 'Incript',
     period: 'Apr 2023 – Jan 2024',
     bullets: [
-      'Led the development of the Angular frontend of an educational platform, enabling public-school students to engage with literary content and prepare for Brazil’s college entrance exams.',
-      'Built the React frontend of a security devices management system for homes and buildings.',
-      'Optimized critical pages, reducing load times from up to 6 seconds to less than 1 second.',
+      'Built and shipped the Angular frontend for an educational platform that helped public-school students engage with literature and prepare for Brazil’s college entrance exams.',
+      'Built the React frontend for a security device management system used in homes and buildings.',
+      'Optimized critical pages, reducing load times from up to 6 seconds to under 1 second.',
     ],
   },
   {
