@@ -1,6 +1,3 @@
-import { useState } from "react";
-import html2canvas from "html2canvas";
-import { jsPDF } from "jspdf";
 import "./App.css";
 
 const emailHref =
@@ -168,82 +165,16 @@ function ContactIcon({ name }: { name: ContactIconName }) {
   );
 }
 
-async function downloadResumePdf() {
-  const resume = document.querySelector<HTMLElement>(".resume-page");
-
-  if (!resume) {
-    throw new Error("Resume element was not found.");
-  }
-
-  document.body.classList.add("pdf-exporting");
-
-  await new Promise((resolve) => window.requestAnimationFrame(resolve));
-
-  const resumeRect = resume.getBoundingClientRect();
-
-  const canvas = await html2canvas(resume, {
-    backgroundColor: "#ffffff",
-    scale: 2,
-    useCORS: true,
-    windowWidth: resume.scrollWidth,
-    windowHeight: resume.scrollHeight,
-  });
-
-  const pdfWidth = 8.5;
-  const pdfHeight = 11;
-  const imageData = canvas.toDataURL("image/jpeg", 0.98);
-  const pdf = new jsPDF({
-    orientation: "portrait",
-    unit: "in",
-    format: "letter",
-    compress: true,
-  });
-
-  pdf.addImage(imageData, "JPEG", 0, 0, pdfWidth, pdfHeight);
-
-  const scaleX = pdfWidth / resumeRect.width;
-  const scaleY = pdfHeight / resumeRect.height;
-
-  resume.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((link) => {
-    const linkRect = link.getBoundingClientRect();
-
-    pdf.link(
-      (linkRect.left - resumeRect.left) * scaleX,
-      (linkRect.top - resumeRect.top) * scaleY,
-      linkRect.width * scaleX,
-      linkRect.height * scaleY,
-      { url: link.href },
-    );
-  });
-
-  pdf.save("MauricioAzevedo_Resume.pdf");
-
-  document.body.classList.remove("pdf-exporting");
-}
-
 function App() {
-  const [isDownloading, setIsDownloading] = useState(false);
-
-  async function handleDownloadPdf() {
-    try {
-      setIsDownloading(true);
-      await downloadResumePdf();
-    } finally {
-      document.body.classList.remove("pdf-exporting");
-      setIsDownloading(false);
-    }
-  }
-
   return (
     <main className="resume-shell">
       <div className="toolbar" aria-label="Resume actions">
         <button
           type="button"
           className="download-button"
-          onClick={handleDownloadPdf}
-          disabled={isDownloading}
+          onClick={() => window.print()}
         >
-          {isDownloading ? "Gerando PDF..." : "Baixar PDF"}
+          Baixar PDF
         </button>
       </div>
 
