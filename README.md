@@ -11,4 +11,4 @@ npm run dev
 
 ## Download as PDF
 
-Open the app and click **Baixar PDF**. The button opens the browser print dialog with the page configured as Letter size (`8.5in x 11in`). Choose **Save as PDF**.
+Open the app and click **Baixar PDF**. The app generates `MauricioAzevedo_Resume.pdf` in the browser using only the resume page element, so the toolbar and download button are not included in the exported PDF.
