@@ -7,12 +7,9 @@ const emailHref =
   'mailto:mauricio.mendonca.azevedo@gmail.com?subject=Software%20Engineering%20Opportunity%20-%20%3CCompany%3E&body=Hi%20Maur%C3%ADcio%2C%0D%0A%0D%0AI%20saw%20your%20resume%20and%20would%20like%20to%20discuss%20a%20Senior%20Software%20Engineer%20role%20at%20%3CCompany%3E.%20Do%20you%20have%20time%20for%20a%20quick%20call%20this%20week%3F%0D%0A%0D%0AThanks%2C%0D%0A%3CYour%20Name%3E%0D%0A%3CCompany%3E%0D%0A%3CPhone%3E'
 
 const skills = [
-  ['Languages', 'TypeScript, JavaScript, Java, Ruby'],
-  ['Frontend', 'React, Angular, Tailwind CSS'],
-  ['Backend', 'Node.js, NestJS, Express, Spring Boot, Ruby on Rails'],
-  ['Data', 'PostgreSQL, Oracle, Redis, Prisma, TypeORM, Active Record'],
-  ['Tools', 'AWS, Docker, GitHub Actions'],
-  ['Testing', 'Jest, JUnit, RSpec'],
+  ['Programming Languages', 'TypeScript, JavaScript, Java, Ruby'],
+  ['Libraries & Frameworks', 'React, Angular, Node.js, NestJS, Express, Spring Boot, Ruby on Rails, Tailwind CSS'],
+  ['Tools & Platforms', 'PostgreSQL, Oracle, Redis, AWS, Docker, GitHub Actions, Prisma, TypeORM, Active Record, Jest, JUnit, RSpec'],
 ]
 
 const experiences = [
