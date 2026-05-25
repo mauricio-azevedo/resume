@@ -35,6 +35,8 @@ type ResumeContent = {
   project: {
     title: string;
     description: string;
+    liveHref: string;
+    repoHref: string;
   };
   languages: {
     english: string;
@@ -154,6 +156,8 @@ const resumeContent: Record<Language, ResumeContent> = {
       title: "BeachRank",
       description:
         "BeachRank is a mobile-first web app that turns casual beach tennis matches into group rankings, player ratings, match history, and a lightweight social feed.",
+      liveHref: "http://beachrank-eight.vercel.app",
+      repoHref: "https://github.com/mauricio-azevedo/beachrank",
     },
     languages: {
       english: "C1",
@@ -240,6 +244,8 @@ const resumeContent: Record<Language, ResumeContent> = {
       title: "BeachRank",
       description:
         "BeachRank é uma aplicação web mobile-first que transforma partidas casuais de beach tennis em rankings de grupos, ratings de jogadores, histórico de partidas e um feed social leve.",
+      liveHref: "http://beachrank-eight.vercel.app",
+      repoHref: "https://github.com/mauricio-azevedo/beachrank",
     },
     languages: {
       english: "C1",
@@ -407,7 +413,30 @@ function App() {
             <section className="resume-section projects-section">
               <h2>{content.projectsTitle}</h2>
               <article className="side-item">
-                <h3>{content.project.title}</h3>
+                <div className="project-heading">
+                  <h3>{content.project.title}</h3>
+                  <div className="project-resource-links">
+                    <a
+                      href={content.project.liveHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-resource-link"
+                    >
+                      <ContactIcon name="portfolio" />
+                      <span>Live</span>
+                    </a>
+                    <span className="project-link-divider">|</span>
+                    <a
+                      href={content.project.repoHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-resource-link"
+                    >
+                      <ContactIcon name="github" />
+                      <span>Repo</span>
+                    </a>
+                  </div>
+                </div>
                 <p>{content.project.description}</p>
               </article>
             </section>
