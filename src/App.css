@@ -30,11 +30,12 @@ a {
 
 .resume-shell {
   min-height: 100vh;
-  padding: 30px 16px 50px;
+  min-width: var(--page-width);
+  padding: 30px 0 50px;
 }
 
 .toolbar {
-  width: min(100%, var(--page-width));
+  width: var(--page-width);
   margin: 0 auto 16px;
   display: flex;
   justify-content: flex-end;
@@ -309,67 +310,6 @@ li::before {
   margin-top: 3.5pt;
 }
 
-body.pdf-exporting {
-  background: #ffffff;
-}
-
-body.pdf-exporting .resume-page {
-  width: var(--page-width);
-  height: var(--page-height);
-  min-height: var(--page-height);
-  padding: var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
-  box-shadow: none;
-  overflow: hidden;
-}
-
-@media (max-width: 760px) {
-  .resume-shell {
-    padding: 16px 10px 32px;
-  }
-
-  .toolbar {
-    justify-content: stretch;
-  }
-
-  .download-button {
-    width: 100%;
-  }
-
-  .resume-page {
-    width: 100%;
-    min-height: auto;
-    padding: 28px;
-  }
-
-  .resume-header,
-  .resume-layout {
-    display: block;
-  }
-
-  .contact-list {
-    padding-top: 18px;
-  }
-
-  .side-column {
-    margin-top: 30px;
-  }
-
-  .item-heading {
-    display: block;
-  }
-
-  .item-heading span {
-    display: block;
-    margin-top: 3px;
-    text-align: left;
-  }
-
-  h1 {
-    font-size: 35px;
-    letter-spacing: -0.05em;
-  }
-}
-
 @page {
   size: 8.5in 11in;
   margin: 0;
@@ -403,36 +343,5 @@ body.pdf-exporting .resume-page {
     overflow: hidden;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
-  }
-
-  .resume-header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 2.35in;
-    column-gap: 0.5in;
-  }
-
-  .resume-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 2.38in;
-    column-gap: 0.48in;
-  }
-
-  .side-column {
-    margin-top: 0;
-  }
-
-  .item-heading {
-    display: flex;
-  }
-
-  .item-heading span {
-    display: inline;
-    margin-top: 0;
-    text-align: right;
-  }
-
-  h1 {
-    font-size: 44px;
-    letter-spacing: -0.045em;
   }
 }
