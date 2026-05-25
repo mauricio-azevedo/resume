@@ -368,38 +368,6 @@ body.pdf-exporting .resume-page {
     font-size: 35px;
     letter-spacing: -0.05em;
   }
-
-  body.pdf-exporting .resume-page {
-    width: var(--page-width);
-    height: var(--page-height);
-    min-height: var(--page-height);
-    padding: var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
-    overflow: hidden;
-  }
-
-  body.pdf-exporting .resume-header,
-  body.pdf-exporting .resume-layout {
-    display: grid;
-  }
-
-  body.pdf-exporting .side-column {
-    margin-top: 0;
-  }
-
-  body.pdf-exporting .item-heading {
-    display: flex;
-  }
-
-  body.pdf-exporting .item-heading span {
-    display: inline;
-    margin-top: 0;
-    text-align: right;
-  }
-
-  body.pdf-exporting h1 {
-    font-size: 44px;
-    letter-spacing: -0.065em;
-  }
 }
 
 @page {
@@ -435,5 +403,36 @@ body.pdf-exporting .resume-page {
     overflow: hidden;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+  }
+
+  .resume-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2.35in;
+    column-gap: 0.5in;
+  }
+
+  .resume-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2.38in;
+    column-gap: 0.48in;
+  }
+
+  .side-column {
+    margin-top: 0;
+  }
+
+  .item-heading {
+    display: flex;
+  }
+
+  .item-heading span {
+    display: inline;
+    margin-top: 0;
+    text-align: right;
+  }
+
+  h1 {
+    font-size: 44px;
+    letter-spacing: -0.045em;
   }
 }
