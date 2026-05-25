@@ -129,9 +129,28 @@ h1 {
   flex-direction: column;
   font-style: normal;
   font-size: 11px;
-  gap: 2.2pt;
+  gap: 3pt;
   line-height: 1.22;
   padding-top: 0.13in;
+}
+
+.contact-item {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  min-width: 0;
+}
+
+.contact-icon {
+  color: var(--soft);
+  flex: 0 0 auto;
+  height: 11px;
+  width: 11px;
+}
+
+.contact-item span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .resume-page a {
@@ -142,6 +161,10 @@ h1 {
 .resume-page a:hover {
   color: var(--blue);
   text-decoration: underline;
+}
+
+.resume-page a:hover .contact-icon {
+  color: var(--blue);
 }
 
 .resume-layout {
