@@ -175,7 +175,10 @@ h2 {
 }
 
 .item-heading {
-  display: block;
+  align-items: baseline;
+  display: flex;
+  gap: 0.14in;
+  justify-content: space-between;
   margin-bottom: 0.11in;
 }
 
@@ -183,6 +186,7 @@ h2 {
   color: var(--ink);
   font-size: 10pt;
   line-height: 1.2;
+  min-width: 0;
 }
 
 .item-heading strong,
@@ -201,11 +205,11 @@ h2 {
 
 .item-heading span {
   color: var(--soft);
-  display: inline-block;
+  flex: 0 0 auto;
   font-size: 7.8pt;
   font-weight: 600;
   line-height: 1;
-  margin-left: 5pt;
+  text-align: right;
   white-space: nowrap;
 }
 
@@ -326,6 +330,16 @@ body.pdf-exporting .resume-page {
     margin-top: 30px;
   }
 
+  .item-heading {
+    display: block;
+  }
+
+  .item-heading span {
+    display: block;
+    margin-top: 3px;
+    text-align: left;
+  }
+
   h1 {
     font-size: 35px;
     letter-spacing: -0.05em;
@@ -346,6 +360,16 @@ body.pdf-exporting .resume-page {
 
   body.pdf-exporting .side-column {
     margin-top: 0;
+  }
+
+  body.pdf-exporting .item-heading {
+    display: flex;
+  }
+
+  body.pdf-exporting .item-heading span {
+    display: inline;
+    margin-top: 0;
+    text-align: right;
   }
 
   body.pdf-exporting h1 {
