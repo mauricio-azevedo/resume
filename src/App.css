@@ -130,7 +130,7 @@ h1 {
   flex-direction: column;
   font-style: normal;
   font-size: 11px;
-  gap: 3pt;
+  gap: .5rem;
   line-height: 1.22;
   padding-top: 0.13in;
 }
