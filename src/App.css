@@ -238,6 +238,19 @@ h2 {
   margin-bottom: 0.17in;
 }
 
+.section-title {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+}
+
+.section-icon {
+  color: currentColor;
+  flex: 0 0 auto;
+  height: 13px;
+  width: 13px;
+}
+
 .experience {
   margin-top: 2rem;
 }
