@@ -72,14 +72,14 @@ const contactItems: ContactItem[] = [
     external: true,
   },
   {
-    href: "https://www.linkedin.com/in/mauricio-azevedo/",
+    href: "https://www.linkedin.com/in/mauricio-azevedo",
     label: "linkedin.com/in/mauricio-azevedo",
     icon: "linkedin",
     external: true,
   },
   {
-    href: "https://mauricioazevedo.vercel.app/",
-    label: "mauricioazevedo.vercel.app",
+    href: "https://mauricioazevedo.com",
+    label: "mauricioazevedo.com",
     icon: "portfolio",
     external: true,
   },
