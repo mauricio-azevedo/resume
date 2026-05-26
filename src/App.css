@@ -4,7 +4,11 @@
   --page-margin-x: 0.5in;
   --page-margin-top: 0.54in;
   --page-margin-bottom: 0.42in;
-  --blue: #2454e6;
+  --primary: #334155;
+  --primary-hover: #1e293b;
+  --primary-shadow: rgba(51, 65, 85, 0.18);
+  --primary-focus: rgba(51, 65, 85, 0.22);
+  --accent-blue: #2454e6;
   --ink: #172033;
   --muted: #4a5870;
   --soft: #71809a;
@@ -66,30 +70,30 @@ a {
 
 .language-button:hover,
 .language-button:focus-visible {
-  color: var(--blue);
+  color: var(--primary);
 }
 
 .language-button.is-active {
-  background: var(--blue);
+  background: var(--primary);
   color: #ffffff;
 }
 
 .download-button {
   border: 0;
   border-radius: 999px;
-  background: var(--blue);
+  background: var(--primary);
   color: #ffffff;
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
   padding: 11px 17px;
-  box-shadow: 0 12px 28px rgba(36, 84, 230, 0.22);
+  box-shadow: 0 12px 28px var(--primary-shadow);
 }
 
 .download-button:hover,
 .download-button:focus-visible {
-  background: #1d45bd;
+  background: var(--primary-hover);
 }
 
 .download-button:disabled {
@@ -99,7 +103,7 @@ a {
 
 .download-button:focus-visible,
 .language-button:focus-visible {
-  outline: 3px solid rgba(36, 84, 230, 0.2);
+  outline: 3px solid var(--primary-focus);
   outline-offset: 3px;
 }
 
@@ -113,6 +117,18 @@ a {
   box-shadow: 0 26px 70px rgba(15, 23, 42, 0.18);
   font-size: 11px;
   line-height: 1.28;
+  overflow: hidden;
+  position: relative;
+}
+
+.resume-page::before {
+  background: var(--accent-blue);
+  content: '';
+  height: 5px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .resume-header {
@@ -136,7 +152,7 @@ ul {
 }
 
 h1 {
-  color: var(--blue);
+  color: var(--primary);
   font-size: 44px;
   font-weight: 500;
   letter-spacing: -0.045em;
@@ -194,12 +210,12 @@ h1 {
 }
 
 .resume-page a:hover {
-  color: var(--blue);
+  color: var(--primary);
   text-decoration: underline;
 }
 
 .resume-page a:hover .contact-icon {
-  color: var(--blue);
+  color: var(--primary);
 }
 
 .resume-layout {
@@ -214,7 +230,7 @@ h1 {
 }
 
 h2 {
-  color: var(--blue);
+  color: var(--primary);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.025em;
@@ -341,7 +357,7 @@ li::before {
 
 .project-resource-link {
   align-items: center;
-  color: var(--blue) !important;
+  color: var(--primary) !important;
   display: flex;
   gap: 3px;
   font-weight: 500;
@@ -349,7 +365,7 @@ li::before {
 }
 
 .project-resource-link .contact-icon {
-  color: var(--blue);
+  color: var(--primary);
   height: 10px;
   width: 10px;
 }
