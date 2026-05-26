@@ -1,9 +1,13 @@
 import {
+  Briefcase,
+  Code,
   EnvelopeSimple,
   GithubLogo,
   GlobeHemisphereWest,
+  GraduationCap,
   LinkedinLogo,
   Phone,
+  Translate,
 } from "@phosphor-icons/react";
 import { useState } from "react";
 import "./App.css";
@@ -12,6 +16,7 @@ const emailHref = "mailto:mauricio.mendonca.azevedo@gmail.com";
 
 type Language = "en" | "pt";
 type ContactIconName = "email" | "phone" | "github" | "linkedin" | "portfolio";
+type SectionIconName = "experience" | "skills" | "projects" | "languages" | "education";
 
 type ContactItem = {
   href: string;
@@ -272,10 +277,29 @@ const contactIcons = {
   portfolio: GlobeHemisphereWest,
 };
 
+const sectionIcons = {
+  experience: Briefcase,
+  skills: Code,
+  projects: GlobeHemisphereWest,
+  languages: Translate,
+  education: GraduationCap,
+};
+
 function ContactIcon({ name }: { name: ContactIconName }) {
   const Icon = contactIcons[name];
 
   return <Icon aria-hidden="true" className="contact-icon" weight="regular" />;
+}
+
+function SectionTitle({ icon, children }: { icon: SectionIconName; children: string }) {
+  const Icon = sectionIcons[icon];
+
+  return (
+    <h2 className="section-title">
+      <Icon aria-hidden="true" className="section-icon" weight="regular" />
+      <span>{children}</span>
+    </h2>
+  );
 }
 
 function App() {
@@ -338,7 +362,7 @@ function App() {
         <div className="resume-layout">
           <section className="main-column">
             <section className="resume-section experience-section">
-              <h2>{content.experienceTitle}</h2>
+              <SectionTitle icon="experience">{content.experienceTitle}</SectionTitle>
               {content.experiences.map((experience) => (
                 <article
                   className="experience"
@@ -362,7 +386,7 @@ function App() {
 
           <aside className="side-column">
             <section className="resume-section skills-section">
-              <h2>{content.skillsTitle}</h2>
+              <SectionTitle icon="skills">{content.skillsTitle}</SectionTitle>
               <div className="skill-list">
                 {content.skills.map(([label, value]) => (
                   <div className="skill-group" key={label}>
@@ -374,7 +398,7 @@ function App() {
             </section>
 
             <section className="resume-section projects-section">
-              <h2>{content.projectsTitle}</h2>
+              <SectionTitle icon="projects">{content.projectsTitle}</SectionTitle>
               <article className="side-item">
                 <div className="project-heading">
                   <h3>{content.project.title}</h3>
@@ -405,7 +429,7 @@ function App() {
             </section>
 
             <section className="resume-section compact-section">
-              <h2>{content.languagesTitle}</h2>
+              <SectionTitle icon="languages">{content.languagesTitle}</SectionTitle>
               <p>
                 <strong>{language === "pt" ? "Inglês" : "English"}:</strong> {content.languages.english}
               </p>
@@ -415,7 +439,7 @@ function App() {
             </section>
 
             <section className="resume-section education-section">
-              <h2>{content.educationTitle}</h2>
+              <SectionTitle icon="education">{content.educationTitle}</SectionTitle>
               <article className="side-item">
                 <h3>{content.education.school}</h3>
                 <p>{content.education.degree}</p>
