@@ -1,3 +1,10 @@
+import {
+  EnvelopeSimple,
+  GithubLogo,
+  GlobeHemisphereWest,
+  LinkedinLogo,
+  Phone,
+} from "@phosphor-icons/react";
 import { useState } from "react";
 import "./App.css";
 
@@ -257,61 +264,18 @@ const resumeContent: Record<Language, ResumeContent> = {
   },
 };
 
+const contactIcons = {
+  email: EnvelopeSimple,
+  phone: Phone,
+  github: GithubLogo,
+  linkedin: LinkedinLogo,
+  portfolio: GlobeHemisphereWest,
+};
+
 function ContactIcon({ name }: { name: ContactIconName }) {
-  if (name === "github") {
-    return (
-      <svg className="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M12 2.8c-5.1 0-9.2 4.1-9.2 9.2 0 4.1 2.6 7.5 6.3 8.7.5.1.6-.2.6-.5v-1.8c-2.6.6-3.1-1.1-3.1-1.1-.4-1.1-1-1.4-1-1.4-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.3-2-.2-4.2-1-4.2-4.5 0-1 .4-1.8.9-2.5-.1-.2-.4-1.2.1-2.4 0 0 .8-.2 2.5.9.7-.2 1.5-.3 2.3-.3s1.5.1 2.3.3c1.7-1.1 2.5-.9 2.5-.9.5 1.2.2 2.2.1 2.4.6.6.9 1.5.9 2.5 0 3.5-2.1 4.3-4.2 4.5.3.3.6.9.6 1.7v2.6c0 .3.2.6.7.5 3.7-1.2 6.3-4.6 6.3-8.7 0-5.1-4.1-9.2-9.2-9.2Z"
-        />
-      </svg>
-    );
-  }
+  const Icon = contactIcons[name];
 
-  const paths = {
-    email: (
-      <>
-        <rect x="4" y="6" width="16" height="12" rx="2" />
-        <path d="m5 7 7 6 7-6" />
-      </>
-    ),
-    phone: (
-      <path d="M7.6 4.5 10 4l1.4 4-2 1.1a9.7 9.7 0 0 0 5.5 5.5l1.1-2 4 1.4-.5 2.4c-.2 1-1.1 1.7-2.1 1.6A13.5 13.5 0 0 1 6 6.6c-.1-1 .6-1.9 1.6-2.1Z" />
-    ),
-    linkedin: (
-      <>
-        <rect x="4" y="4" width="16" height="16" rx="2" />
-        <path d="M8 11v5" />
-        <path d="M8 8.2v.1" />
-        <path d="M12 16v-5" />
-        <path d="M12 13.2c0-1.3.8-2.2 2-2.2s2 .9 2 2.2V16" />
-      </>
-    ),
-    portfolio: (
-      <>
-        <circle cx="12" cy="12" r="8" />
-        <path d="M4 12h16" />
-        <path d="M12 4c2 2.2 3 4.9 3 8s-1 5.8-3 8" />
-        <path d="M12 4c-2 2.2-3 4.9-3 8s1 5.8 3 8" />
-      </>
-    ),
-  };
-
-  return (
-    <svg
-      className="contact-icon"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      {paths[name]}
-    </svg>
-  );
+  return <Icon aria-hidden="true" className="contact-icon" weight="regular" />;
 }
 
 function App() {
