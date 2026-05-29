@@ -1,9 +1,9 @@
 :root {
   --page-width: 8.5in;
   --page-height: 11in;
-  --page-margin-x: 0.48in;
-  --page-margin-top: 0.38in;
-  --page-margin-bottom: 0.36in;
+  --page-margin-x: 0.42in;
+  --page-margin-top: 0.34in;
+  --page-margin-bottom: 0.30in;
   --ink: #111827;
   --muted: #374151;
   --soft: #4b5563;
@@ -82,7 +82,7 @@ address {
 
 .resume-header {
   border-bottom: 1px solid var(--rule);
-  padding-bottom: 4.5pt;
+  padding-bottom: 5pt;
   text-align: center;
 }
 
@@ -132,7 +132,7 @@ h1 {
 }
 
 .resume-section {
-  margin-top: 7pt;
+  margin-top: 8pt;
 }
 
 .summary-section {
@@ -146,13 +146,13 @@ h2 {
   font-weight: 700;
   letter-spacing: 0.045em;
   line-height: 1;
-  margin-bottom: 4.5pt;
+  margin-bottom: 5pt;
   padding-bottom: 2.5pt;
   text-transform: uppercase;
 }
 
 .experience {
-  margin-top: 5.25pt;
+  margin-top: 6pt;
 }
 
 .experience:first-of-type {
@@ -164,7 +164,7 @@ h2 {
   display: flex;
   gap: 0.12in;
   justify-content: space-between;
-  margin-bottom: 2.5pt;
+  margin-bottom: 2.7pt;
 }
 
 .item-heading p {
@@ -201,7 +201,7 @@ ul {
 }
 
 li {
-  margin-top: 1.75pt;
+  margin-top: 2pt;
   padding-left: 9.5pt;
   position: relative;
 }
@@ -219,7 +219,7 @@ li::before {
 .skill-list {
   color: var(--muted);
   display: grid;
-  gap: 1.7pt;
+  gap: 2pt;
 }
 
 .skill-list strong,
@@ -237,7 +237,7 @@ li::before {
   display: flex;
   gap: 0.12in;
   justify-content: space-between;
-  margin-bottom: 2.5pt;
+  margin-bottom: 2.7pt;
 }
 
 .project-heading h3 {
