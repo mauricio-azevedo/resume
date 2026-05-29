@@ -131,9 +131,7 @@ h1 {
 .contact-list a,
 .project-heading a {
   color: var(--link);
-  text-decoration: underline;
-  text-decoration-thickness: 0.6px;
-  text-underline-offset: 1.6px;
+  text-decoration: none;
 }
 
 .project-heading a {
