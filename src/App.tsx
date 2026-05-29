@@ -1,27 +1,8 @@
-import {
-  Briefcase,
-  Code,
-  EnvelopeSimple,
-  GithubLogo,
-  GlobeHemisphereWest,
-  GraduationCap,
-  LinkedinLogo,
-  Phone,
-  Translate,
-} from "@phosphor-icons/react";
-import { useState } from "react";
 import "./App.css";
-
-const emailHref = "mailto:mauricio.mendonca.azevedo@gmail.com";
-
-type Language = "en" | "pt";
-type ContactIconName = "email" | "phone" | "github" | "linkedin" | "portfolio";
-type SectionIconName = "experience" | "skills" | "projects" | "languages" | "education";
 
 type ContactItem = {
   href: string;
   label: string;
-  icon: ContactIconName;
   external?: boolean;
 };
 
@@ -32,421 +13,214 @@ type Experience = {
   bullets: string[];
 };
 
-type ResumeContent = {
-  headline: string;
-  location: string;
-  downloadLabel: string;
-  experienceTitle: string;
-  skillsTitle: string;
-  projectsTitle: string;
-  languagesTitle: string;
-  educationTitle: string;
-  skills: string[][];
-  experiences: Experience[];
-  project: {
-    title: string;
-    description: string;
-    liveHref: string;
-    repoHref: string;
-  };
-  languages: {
-    english: string;
-    portuguese: string;
-  };
-  education: {
-    school: string;
-    degree: string;
-  };
+type SkillGroup = {
+  label: string;
+  value: string;
 };
 
 const contactItems: ContactItem[] = [
   {
-    href: emailHref,
+    href: "mailto:mauricio.mendonca.azevedo@gmail.com",
     label: "mauricio.mendonca.azevedo@gmail.com",
-    icon: "email",
   },
   {
     href: "tel:+5561999997353",
     label: "+55 61 99999-7353",
-    icon: "phone",
   },
   {
     href: "https://github.com/mauricio-azevedo",
     label: "github.com/mauricio-azevedo",
-    icon: "github",
     external: true,
   },
   {
     href: "https://www.linkedin.com/in/mauricio-azevedo",
     label: "linkedin.com/in/mauricio-azevedo",
-    icon: "linkedin",
     external: true,
   },
   {
     href: "https://mauricioazevedo.com",
     label: "mauricioazevedo.com",
-    icon: "portfolio",
     external: true,
   },
 ];
 
-const resumeContent: Record<Language, ResumeContent> = {
-  en: {
-    headline: "Senior Full Stack Software Engineer",
-    location: "Brasília, Brazil — Remote Worldwide",
-    downloadLabel: "Download PDF",
-    experienceTitle: "Professional Experience",
-    skillsTitle: "Skills",
-    projectsTitle: "Selected Projects",
-    languagesTitle: "Languages",
-    educationTitle: "Education",
-    skills: [
-      ["Programming Languages", "TypeScript, JavaScript, Java, Ruby"],
-      [
-        "Libraries & Frameworks",
-        "React, Angular, Node.js, NestJS, Express, Spring Boot, Ruby on Rails, Tailwind CSS",
-      ],
-      [
-        "Tools & Platforms",
-        "PostgreSQL, Oracle, Redis, AWS, Docker, GitHub Actions, Prisma, TypeORM, Active Record, Jest, JUnit, RSpec",
-      ],
+const experiences: Experience[] = [
+  {
+    role: "Senior Full Stack Software Engineer",
+    company: "Estudologia",
+    period: "Aug 2024 – Jan 2026",
+    bullets: [
+      "Delivered production features across Ruby and React systems powering an AI-assisted education platform used daily by 10,000+ students and hundreds of teachers across dozens of schools.",
+      "Worked on core learning workflows where AI generated assessments, analyzed student performance, and helped create personalized teaching plans based on individual results.",
+      "Contributed to AI-powered essay review workflows, including production fixes in a dedicated essay reading and correction microservice that provided automated feedback to students.",
+      "Resolved critical production issues across authentication and account-access flows, including login, password reset, and SSO microservices.",
+      "Expanded API test coverage from 50% to 80% by adding unit tests around critical backend features and business rules.",
+      "Partnered with product owners, stakeholders, designers, and creative directors to turn complex academic workflows into intuitive, reliable product experiences.",
     ],
-    experiences: [
-      {
-        role: "Senior Full Stack Software Engineer",
-        company: "Estudologia",
-        period: "Aug 2024 – Jan 2026",
-        bullets: [
-          "Delivered high-quality, robust production code across multiple Ruby and React systems, including academic management platforms used by 10,000+ students and a commercial library management system.",
-          "Worked closely with stakeholders and product owners to refine business rules and uncover gaps in proposed workflows to fulfill business requirements.",
-          "Collaborated with designers and creative directors to turn complex workflows into intuitive UI/UX for end users.",
-          "Built a real-time quiz game with AI-generated questions, helping students learn while competing with each other.",
-          "Expanded API test coverage from 50% to 80% by writing unit tests for critical API features.",
-        ],
-      },
-      {
-        role: "Lead Full Stack Software Engineer",
-        company: "Inkluziva",
-        period: "Feb 2024 – Aug 2024",
-        bullets: [
-          "Worked alongside stakeholders to prototype the company’s Binance trading automation system and define the first version of its trading workflows.",
-          "Built and shipped the React frontend and Node.js backend for the trading automation platform.",
-          "Automated crypto trading tax reporting, eliminating manual errors and saving 20 hours of work per week.",
-          "Identified and remediated 3 critical security vulnerabilities across the platform.",
-          "Worked on a crypto trading digital wallet, integrating payment APIs and authentication logic.",
-          "Built a feature for creating customizable NFTs in seconds, without requiring users to understand blockchain concepts.",
-        ],
-      },
-      {
-        role: "Mid-Level Full Stack Software Engineer",
-        company: "Incript",
-        period: "Apr 2023 – Jan 2024",
-        bullets: [
-          "Built and shipped the Angular frontend for an educational platform that helped public-school students engage with literature and prepare for Brazil’s college entrance exams.",
-          "Designed and delivered the platform’s admin panel for managing published content and creators.",
-        ],
-      },
-      {
-        role: "Mid-Level Front-End Software Engineer",
-        company: "OpahIT",
-        period: "Feb 2021 – May 2021",
-        bullets: [
-          "Modernized the UI and improved mobile responsiveness in Banco Fibra’s Angular web banking app.",
-        ],
-      },
-      {
-        role: "Junior Full Stack Software Engineer",
-        company: "Basis S.A.",
-        period: "Dec 2018 – Sep 2020",
-        bullets: [
-          "Contributed to new features and resolved bugs across the Java backend and Angular frontend of IBAMA’s nationwide system for managing tree-felling and logging permits in over 10 million hectares of forest.",
-        ],
-      },
-    ],
-    project: {
-      title: "BeachRank",
-      description:
-        "BeachRank is a mobile-first web app that turns casual beach tennis matches into group rankings, player ratings, match history, and a lightweight social feed.",
-      liveHref: "http://beachrank-eight.vercel.app",
-      repoHref: "https://github.com/mauricio-azevedo/beachrank",
-    },
-    languages: {
-      english: "C1",
-      portuguese: "native",
-    },
-    education: {
-      school: "UDF",
-      degree: "Systems Analysis and Development",
-    },
   },
-  pt: {
-    headline: "Engenheiro de Software Full Stack Sênior",
-    location: "Brasília, Brasil — Remoto Worldwide",
-    downloadLabel: "Baixar PDF",
-    experienceTitle: "Experiência Profissional",
-    skillsTitle: "Habilidades",
-    projectsTitle: "Projetos Selecionados",
-    languagesTitle: "Idiomas",
-    educationTitle: "Formação",
-    skills: [
-      ["Linguagens de Programação", "TypeScript, JavaScript, Java, Ruby"],
-      [
-        "Bibliotecas & Frameworks",
-        "React, Angular, Node.js, NestJS, Express, Spring Boot, Ruby on Rails, Tailwind CSS",
-      ],
-      [
-        "Ferramentas & Plataformas",
-        "PostgreSQL, Oracle, Redis, AWS, Docker, GitHub Actions, Prisma, TypeORM, Active Record, Jest, JUnit, RSpec",
-      ],
+  {
+    role: "Lead Full Stack Software Engineer",
+    company: "Inkluziva",
+    period: "Feb 2024 – Aug 2024",
+    bullets: [
+      "Led the development of a USDT trading automation platform integrated with the Binance API, supporting daily buy/sell operations involving BRL 10M+ with limited manual supervision.",
+      "Owned product and technical execution as the initial sole developer, working directly with the company owner to define trading workflows, operational requirements, and system behavior.",
+      "Built and shipped the platform’s React frontend and Node.js backend, including trading flows, Binance API integration, banking/payment API integrations, business rules, and edge-case handling.",
+      "Co-designed and implemented complex financial reconciliation workflows across Binance trading operations and banking/payment APIs, covering payments, statements, transfers, withdrawals, and operational discrepancies.",
+      "Automated crypto trading tax reporting, eliminating recurring manual errors and replacing full-day manual reporting work.",
+      "Reduced dependency on manual trading operations previously handled by a 3-person team and later mentored a junior developer as the engineering team expanded.",
+      "Identified and remediated 3 critical security vulnerabilities across the platform, improving reliability and reducing production risk.",
     ],
-    experiences: [
-      {
-        role: "Engenheiro de Software Full Stack Sênior",
-        company: "Estudologia",
-        period: "ago 2024 – jan 2026",
-        bullets: [
-          "Entreguei código de produção robusto e de alta qualidade em múltiplos sistemas Ruby e React, incluindo plataformas acadêmicas usadas por mais de 10.000 estudantes e um sistema comercial de biblioteca.",
-          "Trabalhei próximo a stakeholders e product owners para refinar regras de negócio e encontrar gaps em fluxos propostos para atender requisitos de negócio.",
-          "Colaborei com designers e diretores criativos para transformar fluxos complexos em UI/UX intuitiva para usuários finais.",
-          "Construí um jogo de quiz em tempo real com perguntas geradas por IA, ajudando estudantes a aprender enquanto competiam entre si.",
-          "Aumentei a cobertura de testes de APIs de 50% para 80% escrevendo testes unitários para funcionalidades críticas.",
-        ],
-      },
-      {
-        role: "Engenheiro de Software Full Stack Líder",
-        company: "Inkluziva",
-        period: "fev 2024 – ago 2024",
-        bullets: [
-          "Trabalhei junto a stakeholders para prototipar o sistema de automação de trading na Binance da empresa e definir a primeira versão dos fluxos de trading.",
-          "Construí e entreguei o frontend em React e o backend em Node.js da plataforma de automação de trading.",
-          "Automatizei a apuração fiscal de operações de cripto, eliminando erros manuais e economizando 20 horas de trabalho por semana.",
-          "Identifiquei e corrigi 3 vulnerabilidades críticas de segurança na plataforma.",
-          "Trabalhei em uma carteira digital para trading de cripto, integrando APIs de pagamento e lógica de autenticação.",
-          "Construí uma funcionalidade para criar NFTs customizáveis em segundos, sem exigir que usuários entendessem conceitos de blockchain.",
-        ],
-      },
-      {
-        role: "Engenheiro de Software Full Stack Pleno",
-        company: "Incript",
-        period: "abr 2023 – jan 2024",
-        bullets: [
-          "Construí e entreguei o frontend em Angular de uma plataforma educacional que ajudava estudantes de escolas públicas a se envolverem com literatura e se prepararem para vestibulares no Brasil.",
-          "Projetei e entreguei o painel administrativo da plataforma para gerenciar conteúdos publicados e criadores.",
-        ],
-      },
-      {
-        role: "Engenheiro de Software Front-End Pleno",
-        company: "OpahIT",
-        period: "fev 2021 – mai 2021",
-        bullets: [
-          "Modernizei a UI e melhorei a responsividade mobile no internet banking Angular do Banco Fibra.",
-        ],
-      },
-      {
-        role: "Engenheiro de Software Full Stack Júnior",
-        company: "Basis S.A.",
-        period: "dez 2018 – set 2020",
-        bullets: [
-          "Contribuí para novas funcionalidades e correções no backend Java e frontend Angular do sistema nacional do IBAMA para gestão de autorizações de supressão vegetal em mais de 10 milhões de hectares de floresta.",
-        ],
-      },
-    ],
-    project: {
-      title: "BeachRank",
-      description:
-        "BeachRank é uma aplicação web mobile-first que transforma partidas casuais de beach tennis em rankings de grupos, ratings de jogadores, histórico de partidas e um feed social leve.",
-      liveHref: "http://beachrank-eight.vercel.app",
-      repoHref: "https://github.com/mauricio-azevedo/beachrank",
-    },
-    languages: {
-      english: "C1",
-      portuguese: "nativo",
-    },
-    education: {
-      school: "UDF",
-      degree: "Análise e Desenvolvimento de Sistemas",
-    },
   },
-};
+  {
+    role: "Mid-Level Full Stack Software Engineer",
+    company: "Incript",
+    period: "Apr 2023 – Jan 2024",
+    bullets: [
+      "Re-architected inherited React and Node.js codebases for a crypto digital wallet, improving maintainability through feature-based organization, reusable frontend components, service layers, thin controllers, and repository patterns.",
+      "Built production features across wallet workflows, payment API integrations, authentication logic, and user-facing financial operations.",
+      "Designed and implemented an end-to-end NFT creation feature from scratch, enabling users to generate customizable NFTs in seconds without requiring blockchain knowledge.",
+      "Built the frontend from scratch for an educational platform that adapted classic literary works into comics to help students prepare for Brazilian college entrance exams.",
+      "Developed a complex mobile-like continuous web reader and a backoffice interface for managing platform content, working directly with the client to refine requirements, business rules, and design details.",
+    ],
+  },
+  {
+    role: "Mid-Level Front-End Software Engineer",
+    company: "OpahIT",
+    period: "Feb 2021 – May 2021",
+    bullets: [
+      "Modernized UI components and improved mobile responsiveness in Banco Fibra’s Angular web banking application, contributing to a more reliable and usable digital banking experience.",
+    ],
+  },
+  {
+    role: "Junior Full Stack Software Engineer",
+    company: "Basis S.A.",
+    period: "Dec 2018 – Sep 2020",
+    bullets: [
+      "Contributed to Java and Angular features, bug fixes, and maintenance in IBAMA’s nationwide environmental licensing system for managing tree-felling and logging permits across millions of hectares of forest.",
+    ],
+  },
+];
 
-const contactIcons = {
-  email: EnvelopeSimple,
-  phone: Phone,
-  github: GithubLogo,
-  linkedin: LinkedinLogo,
-  portfolio: GlobeHemisphereWest,
-};
+const skills: SkillGroup[] = [
+  {
+    label: "Languages",
+    value: "TypeScript, JavaScript, Java, Ruby",
+  },
+  {
+    label: "Frontend",
+    value: "React, Angular, component architecture, complex UI workflows, mobile-first web applications",
+  },
+  {
+    label: "Backend",
+    value: "Node.js, NestJS, Express, Spring Boot, Ruby on Rails, REST APIs, authentication, third-party integrations",
+  },
+  {
+    label: "Data & Infrastructure",
+    value: "PostgreSQL, Oracle, Redis, AWS, Docker",
+  },
+  {
+    label: "Architecture & Quality",
+    value: "modular codebases, service layers, microservices, test automation, CI/CD, production debugging, security remediation",
+  },
+  {
+    label: "Testing",
+    value: "Jest, JUnit, RSpec",
+  },
+];
 
-const sectionIcons = {
-  experience: Briefcase,
-  skills: Code,
-  projects: GlobeHemisphereWest,
-  languages: Translate,
-  education: GraduationCap,
-};
-
-function ContactIcon({ name }: { name: ContactIconName }) {
-  const Icon = contactIcons[name];
-
-  return <Icon aria-hidden="true" className="contact-icon" weight="regular" />;
-}
-
-function SectionTitle({ icon, children }: { icon: SectionIconName; children: string }) {
-  const Icon = sectionIcons[icon];
-
-  return (
-    <h2 className="section-title">
-      <Icon aria-hidden="true" className="section-icon" weight="regular" />
-      <span>{children}</span>
-    </h2>
-  );
-}
+const beachRankBullets = [
+  "Built a full-stack product that turns casual beach tennis matches into group rankings, player ratings, match history, profiles, invites, and a lightweight social feed.",
+  "Designed a score-aware Elo-inspired rating engine for doubles matches, with group-scoped ratings, rating snapshots, append-only fast-path updates, and full historical recalculation for edits, deletes, and retroactive matches.",
+  "Modeled a persisted event feed for meaningful competitive moments, with visibility rules, event lifecycle handling, and transactionally synced domain events for close matches, blowouts, and group activity.",
+  "Structured the monorepo around product/domain features, with backend-owned business logic, typed domain models, feature-based frontend architecture, ADR-style documentation, and clear separation between UI, API, domain, and persistence concerns.",
+];
 
 function App() {
-  const [language, setLanguage] = useState<Language>("en");
-  const content = resumeContent[language];
-
   return (
     <main className="resume-shell">
       <div className="toolbar" aria-label="Resume actions">
-        <div className="language-toggle" aria-label="Select resume language">
-          <button
-            type="button"
-            className={`language-button ${language === "en" ? "is-active" : ""}`}
-            onClick={() => setLanguage("en")}
-          >
-            EN
-          </button>
-          <button
-            type="button"
-            className={`language-button ${language === "pt" ? "is-active" : ""}`}
-            onClick={() => setLanguage("pt")}
-          >
-            PT
-          </button>
-        </div>
-
-        <button
-          type="button"
-          className="download-button"
-          onClick={() => window.print()}
-        >
-          {content.downloadLabel}
+        <button type="button" className="download-button" onClick={() => window.print()}>
+          Download PDF
         </button>
       </div>
 
       <article className="resume-page" aria-label="Maurício Azevedo resume">
         <header className="resume-header">
-          <div className="intro">
-            <h1>Maurício Azevedo</h1>
-            <p className="headline">{content.headline}</p>
-            <p className="location">{content.location}</p>
-          </div>
-
+          <h1>Maurício Azevedo</h1>
+          <p className="headline">Senior Software Engineer — Full Stack & Product Engineering</p>
+          <p className="location">Brasília, Brazil · Remote Worldwide</p>
           <address className="contact-list">
-            {contactItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="contact-item"
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noreferrer" : undefined}
-              >
-                <ContactIcon name={item.icon} />
-                <span>{item.label}</span>
-              </a>
+            {contactItems.map((item, index) => (
+              <span className="contact-entry" key={item.label}>
+                <a
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
+                >
+                  {item.label}
+                </a>
+                {index < contactItems.length - 1 ? <span className="contact-separator">·</span> : null}
+              </span>
             ))}
           </address>
         </header>
 
-        <div className="resume-layout">
-          <section className="main-column">
-            <section className="resume-section experience-section">
-              <SectionTitle icon="experience">{content.experienceTitle}</SectionTitle>
-              {content.experiences.map((experience) => (
-                <article
-                  className="experience"
-                  key={`${experience.role}-${experience.company}`}
-                >
-                  <div className="item-heading">
-                    <p>
-                      {experience.role}, <em>{experience.company}</em>
-                    </p>
-                    <span>{experience.period}</span>
-                  </div>
-                  <ul>
-                    {experience.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </section>
-          </section>
+        <section className="resume-section summary-section">
+          <p>
+            Senior Software Engineer with 6+ years of experience building production web platforms across education, fintech, crypto, public-sector systems, and AI-enabled products. Strong ownership across frontend, backend, APIs, testing, security, integrations, and product workflows. Proven impact in systems used by 10,000+ users, test coverage expansion, workflow automation, and business-critical product delivery.
+          </p>
+        </section>
 
-          <aside className="side-column">
-            <section className="resume-section skills-section">
-              <SectionTitle icon="skills">{content.skillsTitle}</SectionTitle>
-              <div className="skill-list">
-                {content.skills.map(([label, value]) => (
-                  <div className="skill-group" key={label}>
-                    <h3>{label}</h3>
-                    <p>{value}</p>
-                  </div>
-                ))}
+        <section className="resume-section experience-section">
+          <h2>Professional Experience</h2>
+          {experiences.map((experience) => (
+            <article className="experience" key={`${experience.role}-${experience.company}`}>
+              <div className="item-heading">
+                <p>
+                  <strong>{experience.role}</strong>, <em>{experience.company}</em>
+                </p>
+                <span>{experience.period}</span>
               </div>
-            </section>
+              <ul>
+                {experience.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </section>
 
-            <section className="resume-section projects-section">
-              <SectionTitle icon="projects">{content.projectsTitle}</SectionTitle>
-              <article className="side-item">
-                <div className="project-heading">
-                  <h3>{content.project.title}</h3>
-                  <div className="project-resource-links">
-                    <a
-                      href={content.project.liveHref}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-resource-link"
-                    >
-                      <ContactIcon name="portfolio" />
-                      <span>Live</span>
-                    </a>
-                    <span className="project-link-divider">|</span>
-                    <a
-                      href={content.project.repoHref}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-resource-link"
-                    >
-                      <ContactIcon name="github" />
-                      <span>Repo</span>
-                    </a>
-                  </div>
-                </div>
-                <p>{content.project.description}</p>
-              </article>
-            </section>
-
-            <section className="resume-section compact-section">
-              <SectionTitle icon="languages">{content.languagesTitle}</SectionTitle>
-              <p>
-                <strong>{language === "pt" ? "Inglês" : "English"}:</strong> {content.languages.english}
+        <section className="resume-section skills-section">
+          <h2>Technical Skills</h2>
+          <div className="skill-list">
+            {skills.map((skill) => (
+              <p key={skill.label}>
+                <strong>{skill.label}:</strong> {skill.value}
               </p>
-              <p>
-                <strong>{language === "pt" ? "Português" : "Portuguese"}:</strong> {content.languages.portuguese}
-              </p>
-            </section>
+            ))}
+          </div>
+        </section>
 
-            <section className="resume-section education-section">
-              <SectionTitle icon="education">{content.educationTitle}</SectionTitle>
-              <article className="side-item">
-                <h3>{content.education.school}</h3>
-                <p>{content.education.degree}</p>
-              </article>
-            </section>
-          </aside>
-        </div>
+        <section className="resume-section project-section">
+          <h2>Selected Project</h2>
+          <article className="project">
+            <div className="project-heading">
+              <h3>BeachRank — Mobile-first sports ranking platform</h3>
+              <p>
+                Next.js, NestJS, PostgreSQL, Prisma ·{" "}
+                <a href="https://github.com/mauricio-azevedo/beachrank" target="_blank" rel="noreferrer">
+                  Repo
+                </a>
+              </p>
+            </div>
+            <ul>
+              {beachRankBullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        </section>
       </article>
     </main>
   );
