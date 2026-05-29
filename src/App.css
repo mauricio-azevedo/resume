@@ -60,7 +60,7 @@ a {
 
 .resume-page {
   width: var(--page-width);
-  min-height: var(--page-height);
+  height: var(--page-height);
   margin: 0 auto;
   padding: var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
   background: var(--paper);
@@ -132,11 +132,12 @@ h1 {
 }
 
 .resume-section {
-  margin-top: 8pt;
+  margin-top: 14pt;
 }
 
 .summary-section {
   color: var(--muted);
+    margin-top: 5pt;
 }
 
 h2 {
@@ -152,7 +153,7 @@ h2 {
 }
 
 .experience {
-  margin-top: 6pt;
+  margin-top: 9pt;
 }
 
 .experience:first-of-type {
