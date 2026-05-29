@@ -7,6 +7,7 @@
   --ink: #111827;
   --muted: #374151;
   --soft: #4b5563;
+  --link: #2f5f9f;
   --rule: #d1d5db;
   --paper: #ffffff;
   --screen-bg: #f3f4f6;
@@ -125,6 +126,13 @@ h1 {
 .resume-page a {
   color: inherit;
   text-decoration: none;
+}
+
+.contact-list a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 0.6px;
+  text-underline-offset: 1.6px;
 }
 
 .resume-page a:hover {
