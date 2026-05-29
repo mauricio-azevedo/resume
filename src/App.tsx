@@ -221,6 +221,13 @@ function App() {
             </ul>
           </article>
         </section>
+
+        <section className="resume-section education-languages-section">
+          <h2>Education & Languages</h2>
+          <p>
+            <strong>UDF:</strong> Systems Analysis and Development · <strong>English:</strong> C1 · <strong>Portuguese:</strong> Native
+          </p>
+        </section>
       </article>
     </main>
   );
