@@ -82,7 +82,7 @@ address {
 
 .resume-header {
   border-bottom: 1px solid var(--rule);
-  padding-bottom: 5.5pt;
+  padding-bottom: 4.5pt;
   text-align: center;
 }
 
@@ -98,13 +98,7 @@ h1 {
   color: var(--muted);
   font-size: 10.4px;
   font-weight: 700;
-  margin-top: 3.5pt;
-}
-
-.location {
-  color: var(--soft);
-  font-size: 9px;
-  margin-top: 2.5pt;
+  margin-top: 3pt;
 }
 
 .contact-list {
@@ -116,7 +110,7 @@ h1 {
   gap: 2pt 4pt;
   justify-content: center;
   line-height: 1.2;
-  margin-top: 3.5pt;
+  margin-top: 3pt;
 }
 
 .contact-entry {
