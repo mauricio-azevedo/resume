@@ -221,7 +221,7 @@ function App() {
                 <a href="https://beachrank-eight.vercel.app" target="_blank" rel="noreferrer">
                   Live
                 </a>
-                {" · "}
+                {" | "}
                 <a href="https://github.com/mauricio-azevedo/beachrank" target="_blank" rel="noreferrer">
                   Repo
                 </a>
