@@ -1,7 +1,7 @@
 import "./App.css";
 
 type ContactItem = {
-  href: string;
+  href?: string;
   label: string;
   external?: boolean;
 };
@@ -20,26 +20,33 @@ type SkillGroup = {
 
 const contactItems: ContactItem[] = [
   {
-    href: "mailto:mauricio.mendonca.azevedo@gmail.com",
-    label: "mauricio.mendonca.azevedo@gmail.com",
+    label: "Brasília, Brazil",
   },
   {
-    href: "tel:+5561999997353",
-    label: "+55 61 99999-7353",
+    label: "Remote Worldwide",
+  },
+  {
+    href: "mailto:mauricio.mendonca.azevedo@gmail.com",
+    label: "Email",
+  },
+  {
+    href: "https://wa.me/5561999997353",
+    label: "WhatsApp",
+    external: true,
   },
   {
     href: "https://github.com/mauricio-azevedo",
-    label: "github.com/mauricio-azevedo",
+    label: "GitHub",
     external: true,
   },
   {
     href: "https://www.linkedin.com/in/mauricio-azevedo",
-    label: "linkedin.com/in/mauricio-azevedo",
+    label: "LinkedIn",
     external: true,
   },
   {
     href: "https://mauricioazevedo.com",
-    label: "mauricioazevedo.com",
+    label: "Portfolio",
     external: true,
   },
 ];
@@ -149,17 +156,20 @@ function App() {
         <header className="resume-header">
           <h1>Maurício Azevedo</h1>
           <p className="headline">Senior Software Engineer — Full Stack & Product Engineering</p>
-          <p className="location">Brasília, Brazil · Remote Worldwide</p>
           <address className="contact-list">
             {contactItems.map((item, index) => (
               <span className="contact-entry" key={item.label}>
-                <a
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noreferrer" : undefined}
-                >
-                  {item.label}
-                </a>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noreferrer" : undefined}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  item.label
+                )}
                 {index < contactItems.length - 1 ? <span className="contact-separator">·</span> : null}
               </span>
             ))}
