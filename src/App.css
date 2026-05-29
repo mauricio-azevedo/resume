@@ -131,6 +131,13 @@ h1 {
 .contact-list a,
 .project-heading a {
   color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 0.6px;
+  text-underline-offset: 1.6px;
+}
+
+.project-heading a {
+  font-weight: 400;
 }
 
 .resume-section {
