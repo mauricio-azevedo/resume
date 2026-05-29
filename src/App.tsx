@@ -216,13 +216,17 @@ function App() {
           <h2>Selected Project</h2>
           <article className="project">
             <div className="project-heading">
-              <h3>BeachRank — Mobile-first sports ranking platform</h3>
-              <p>
-                Next.js, NestJS, PostgreSQL, Prisma ·{" "}
+              <h3>
+                BeachRank — Mobile-first sports ranking platform ·{" "}
+                <a href="https://beachrank-eight.vercel.app" target="_blank" rel="noreferrer">
+                  Live
+                </a>
+                {" · "}
                 <a href="https://github.com/mauricio-azevedo/beachrank" target="_blank" rel="noreferrer">
                   Repo
                 </a>
-              </p>
+              </h3>
+              <p>Next.js, NestJS, PostgreSQL, Prisma</p>
             </div>
             <ul>
               {beachRankBullets.map((bullet) => (
