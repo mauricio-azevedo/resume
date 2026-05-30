@@ -36,10 +36,37 @@ a {
 }
 
 .toolbar {
+  align-items: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin: 0 auto 14px;
   width: var(--page-width);
+}
+
+.language-toggle {
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+}
+
+.language-button {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--soft);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 8px 11px;
+}
+
+.language-button.is-active {
+  background: var(--ink);
+  color: #ffffff;
 }
 
 .download-button {
@@ -55,8 +82,11 @@ a {
 }
 
 .download-button:hover,
-.download-button:focus-visible {
+.download-button:focus-visible,
+.language-button:hover,
+.language-button:focus-visible {
   background: #374151;
+  color: #ffffff;
 }
 
 .resume-page {
