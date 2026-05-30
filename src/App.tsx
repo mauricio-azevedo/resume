@@ -194,11 +194,12 @@ const resumeContent: Record<Language, ResumeContent> = {
       {
         role: "Engenheiro de Software Full Stack Sênior",
         company: "Estudologia",
+        stack: "React, Next.js, Ruby on Rails",
         period: "ago 2024 – jan 2026",
         bullets: [
-          "Entreguei features em produção em sistemas Ruby e React que sustentavam uma plataforma educacional assistida por IA usada diariamente por 10.000+ alunos e centenas de professores em dezenas de escolas.",
-          "Trabalhei em fluxos centrais de aprendizagem nos quais IA gerava avaliações, analisava desempenho dos alunos e ajudava a criar planos de ensino personalizados com base nos resultados individuais.",
-          "Contribuí para fluxos de correção de redação com IA, incluindo correções em produção em um microserviço dedicado de leitura e correção que fornecia feedback automatizado aos alunos.",
+          "Entreguei features em produção para uma plataforma educacional assistida por IA usada diariamente por 10.000+ alunos e centenas de professores em dezenas de escolas.",
+          "Trabalhei em fluxos centrais de aprendizagem nos quais IA gerava avaliações, analisava desempenho e ajudava a criar planos de ensino personalizados com base nos resultados individuais.",
+          "Contribuí para fluxos de correção de redação com IA, incluindo correções em produção em um microserviço de leitura/correção que fornecia feedback automatizado aos alunos.",
           "Resolvi problemas críticos de produção em fluxos de autenticação e acesso à conta, incluindo login, troca de senha e microserviços de SSO.",
           "Expandi a cobertura de testes de API de 50% para 80% adicionando testes unitários em features críticas de backend e regras de negócio.",
           "Trabalhei com product owners, stakeholders, designers e diretores criativos para transformar fluxos acadêmicos complexos em experiências intuitivas e confiáveis.",
@@ -207,11 +208,12 @@ const resumeContent: Record<Language, ResumeContent> = {
       {
         role: "Engenheiro de Software Full Stack Líder",
         company: "Inkluziva",
+        stack: "React, Node.js, NestJS",
         period: "fev 2024 – ago 2024",
         bullets: [
-          "Liderei o desenvolvimento de uma plataforma de automação de compra e venda de USDT integrada à API da Binance, suportando operações diárias envolvendo BRL 10M+ com supervisão manual limitada.",
+          "Liderei o desenvolvimento de uma plataforma de automação de compra e venda de USDT integrada à API da Binance, suportando operações diárias envolvendo BRL 10M+ com supervisão limitada.",
           "Assumi a execução técnica e de produto como dev inicial único, trabalhando diretamente com o dono da empresa para definir fluxos de trading, requisitos operacionais e comportamento do sistema.",
-          "Construí e entreguei o frontend React e backend Node.js da plataforma, incluindo fluxos de trading, integração com Binance, APIs bancárias/de pagamento, regras de negócio e tratamento de edge cases.",
+          "Construí e entreguei a plataforma de ponta a ponta, incluindo fluxos de trading, integração com API da Binance, APIs bancárias/de pagamento, regras de negócio e tratamento de edge cases.",
           "Co-desenhei e implementei fluxos complexos de conciliação financeira entre operações na Binance e APIs bancárias/de pagamento, cobrindo pagamentos, extratos, transferências, saques e divergências operacionais.",
           "Automatizei o tax reporting de operações cripto, eliminando erros manuais recorrentes e substituindo trabalho manual de dia inteiro.",
           "Reduzi a dependência de operações manuais de trading antes conduzidas por uma equipe de 3 pessoas e depois mentorei um desenvolvedor júnior conforme o time de engenharia cresceu.",
@@ -221,11 +223,12 @@ const resumeContent: Record<Language, ResumeContent> = {
       {
         role: "Engenheiro de Software Full Stack Pleno",
         company: "Incript",
+        stack: "React, Angular, Node.js, NestJS",
         period: "abr 2023 – jan 2024",
         bullets: [
-          "Rearquitetei codebases herdadas em React e Node.js de uma carteira digital cripto, melhorando manutenibilidade com organização por feature, componentes reutilizáveis, services, controllers enxutos e repositories.",
+          "Rearquitetei codebases herdadas de uma carteira digital cripto, melhorando manutenibilidade com organização por feature, componentes reutilizáveis, services, controllers enxutos e repositories.",
           "Construí features em produção para fluxos de wallet, integrações com APIs de pagamento, lógica de autenticação e operações financeiras voltadas ao usuário.",
-          "Projetei e implementei do zero uma feature end-to-end de criação de NFT, permitindo gerar NFTs customizáveis em segundos sem exigir conhecimento de blockchain.",
+          "Projetei e implementei do zero uma feature end-to-end de criação de NFT, permitindo gerar NFTs customizáveis em segundos sem conhecimento de blockchain.",
           "Construí do zero o frontend de uma plataforma educacional que adaptava obras literárias clássicas para quadrinhos e ajudava estudantes a se prepararem para vestibulares brasileiros.",
           "Desenvolvi um leitor web contínuo e arrastável com comportamento mobile-like e um backoffice para gerenciar conteúdos, trabalhando diretamente com o cliente para refinar requisitos, regras de negócio e design.",
         ],
@@ -233,17 +236,19 @@ const resumeContent: Record<Language, ResumeContent> = {
       {
         role: "Engenheiro de Software Front-End Pleno",
         company: "OpahIT",
+        stack: "Angular",
         period: "fev 2021 – mai 2021",
         bullets: [
-          "Modernizei componentes de UI e melhorei a responsividade mobile no web banking Angular do Banco Fibra, contribuindo para uma experiência bancária digital mais confiável e usável.",
+          "Modernizei componentes de UI e melhorei a responsividade mobile no web banking do Banco Fibra, contribuindo para uma experiência bancária mais confiável e usável.",
         ],
       },
       {
         role: "Engenheiro de Software Full Stack Júnior",
         company: "Basis S.A.",
+        stack: "Angular, Java, Spring Boot",
         period: "dez 2018 – set 2020",
         bullets: [
-          "Contribuí com features, correções de bugs e manutenção em Java e Angular no sistema nacional do IBAMA para gestão de autorizações de supressão vegetal e exploração florestal em milhões de hectares de floresta.",
+          "Contribuí com features, correções de bugs e manutenção no sistema nacional do IBAMA para gestão de autorizações de supressão vegetal e exploração florestal em milhões de hectares.",
         ],
       },
     ],
