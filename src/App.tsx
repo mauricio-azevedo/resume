@@ -82,7 +82,7 @@ const resumeContent: Record<Language, ResumeContent> = {
         period: "Aug 2024 – Jan 2026",
         bullets: [
           "Delivered production features for an AI-assisted education platform used daily by 10,000+ students and hundreds of teachers across dozens of schools.",
-          "Worked on core learning workflows where AI generated assessments, analyzed performance, and helped create personalized teaching plans based on individual results.",
+          "Worked on core learning workflows where AI generated assessments, analyzed performance, and helped create personalized lesson plans based on individual results.",
           "Contributed to AI-powered essay review workflows, including production fixes in an essay reading/correction microservice providing automated feedback to students.",
           "Resolved critical production issues across authentication and account-access flows, including login, password reset, and SSO microservices.",
           "Expanded API test coverage from 50% to 80% by adding unit tests around critical backend features and business rules.",
