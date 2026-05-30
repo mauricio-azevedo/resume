@@ -281,8 +281,16 @@ li::before {
 .project-heading h3 {
   color: var(--ink);
   font-size: 10.2px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.14;
+}
+
+.project-name-main {
+  font-weight: 700;
+}
+
+.project-name-detail {
+  font-weight: 400;
 }
 
 .project-heading p {
