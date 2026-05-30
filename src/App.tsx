@@ -296,6 +296,7 @@ const resumeContent: Record<Language, ResumeContent> = {
 function App() {
   const [language, setLanguage] = useState<Language>("en");
   const content = resumeContent[language];
+  const [projectName, ...projectNameDetails] = content.projectName.split(" — ");
 
   return (
     <main className="resume-shell">
@@ -386,7 +387,11 @@ function App() {
           <article className="project">
             <div className="project-heading">
               <h3>
-                {content.projectName} ·{" "}
+                <span className="project-name-main">{projectName}</span>
+                {projectNameDetails.length > 0 ? (
+                  <span className="project-name-detail"> — {projectNameDetails.join(" — ")}</span>
+                ) : null}
+                {" · "}
                 <a href={sharedLinks.beachRankLive} target="_blank" rel="noreferrer">
                   {content.projectLiveLabel}
                 </a>
