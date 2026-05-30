@@ -198,7 +198,7 @@ const resumeContent: Record<Language, ResumeContent> = {
         period: "ago 2024 – jan 2026",
         bullets: [
           "Entreguei features em produção para uma plataforma educacional assistida por IA usada diariamente por 10.000+ alunos e centenas de professores em dezenas de escolas.",
-          "Trabalhei em fluxos centrais de aprendizagem nos quais IA gerava avaliações, analisava desempenho e ajudava a criar planos de ensino personalizados com base nos resultados individuais.",
+          "Trabalhei em fluxos centrais de aprendizagem nos quais IA gerava avaliações, analisava desempenho e ajudava a criar planos de aula personalizados com base nos resultados individuais.",
           "Contribuí para fluxos de correção de redação com IA, incluindo correções em produção em um microserviço de leitura/correção que fornecia feedback automatizado aos alunos.",
           "Resolvi problemas críticos de produção em fluxos de autenticação e acesso à conta, incluindo login, troca de senha e microserviços de SSO.",
           "Expandi a cobertura de testes de API de 50% para 80% adicionando testes unitários em features críticas de backend e regras de negócio.",
@@ -212,9 +212,9 @@ const resumeContent: Record<Language, ResumeContent> = {
         period: "fev 2024 – ago 2024",
         bullets: [
           "Liderei o desenvolvimento de uma plataforma de automação de compra e venda de USDT integrada à API da Binance, suportando operações diárias envolvendo BRL 10M+ com supervisão limitada.",
-          "Assumi a execução técnica e de produto como dev inicial único, trabalhando diretamente com o dono da empresa para definir fluxos de trading, requisitos operacionais e comportamento do sistema.",
+          "Assumi a execução técnica e de produto como único dev, trabalhando com o dono da empresa para transformar operações de trading em workflows automatizados e regras de sistema.",
           "Construí e entreguei a plataforma de ponta a ponta, incluindo fluxos de trading, integração com API da Binance, APIs bancárias/de pagamento, regras de negócio e tratamento de edge cases.",
-          "Co-desenhei e implementei fluxos complexos de conciliação financeira entre operações na Binance e APIs bancárias/de pagamento, cobrindo pagamentos, extratos, transferências, saques e divergências operacionais.",
+          "Co-desenhei e implementei lógica de conciliação que cruzava trades na Binance com registros do extrato bancário por valor, data e identidade do pagador para liberar USDT.",
           "Automatizei o tax reporting de operações cripto, eliminando erros manuais recorrentes e substituindo trabalho manual de dia inteiro.",
           "Reduzi a dependência de operações manuais de trading antes conduzidas por uma equipe de 3 pessoas e depois mentorei um desenvolvedor júnior conforme o time de engenharia cresceu.",
           "Identifiquei e corrigi 3 vulnerabilidades críticas de segurança na plataforma, melhorando confiabilidade e reduzindo risco em produção.",
