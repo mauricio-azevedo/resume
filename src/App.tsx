@@ -98,7 +98,7 @@ const resumeContent: Record<Language, ResumeContent> = {
           "Led development of a USDT trading automation platform integrated with Binance API, supporting daily buy/sell operations involving BRL 10M+ with limited supervision.",
           "Owned product and technical execution as the initial sole developer, working directly with the company owner to define trading workflows, operational requirements, and system behavior.",
           "Built and shipped the platform end to end, including trading flows, Binance API integration, banking/payment APIs, business rules, and edge-case handling.",
-          "Co-designed and implemented complex financial reconciliation workflows across Binance trading operations and banking/payment APIs, covering payments, statements, transfers, withdrawals, and operational discrepancies.",
+          "Co-designed and implemented reconciliation logic matching Binance trades with bank statement records by amount, date, and payer identity to trigger USDT release.",
           "Automated crypto trading tax reporting, eliminating recurring manual errors and replacing full-day manual reporting work.",
           "Reduced dependency on manual trading operations previously handled by a 3-person team and later mentored a junior developer as the engineering team expanded.",
           "Identified and remediated 3 critical security vulnerabilities across the platform, improving reliability and reducing production risk.",
