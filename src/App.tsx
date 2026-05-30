@@ -160,7 +160,7 @@ const resumeContent: Record<Language, ResumeContent> = {
     projectLiveLabel: "Live",
     projectRepoLabel: "Repo",
     projectBullets: [
-      "Built a full-stack product that turns casual beach tennis matches into group rankings, player ratings, match history, profiles, invites, and a lightweight social feed.",
+      "Built an app that turns casual beach tennis matches into player ratings and rankings, match history, stats, profiles, groups, invites, and a lightweight social feed.",
       "Designed a score-aware Elo-inspired rating engine for doubles matches, with group-scoped ratings, rating snapshots, append-only fast-path updates, and full historical recalculation for edits, deletes, and retroactive matches.",
       "Modeled a persisted event feed for meaningful competitive moments, with visibility rules, event lifecycle handling, and transactionally synced domain events for close matches, blowouts, and group activity.",
       "Structured the monorepo around product/domain features, with backend-owned business logic, typed domain models, feature-based frontend architecture, ADR-style documentation, and clear separation between UI, API, domain, and persistence concerns.",
@@ -276,7 +276,7 @@ const resumeContent: Record<Language, ResumeContent> = {
     projectLiveLabel: "Live",
     projectRepoLabel: "Repo",
     projectBullets: [
-      "Construí um produto full-stack que transforma partidas casuais de beach tennis em rankings de grupos, ratings de jogadores, histórico de partidas, perfis, convites e um feed social leve.",
+      "Construí um app que transforma partidas casuais de beach tennis em ratings e rankings de jogadores, histórico, stats, perfis, grupos, convites e um feed social leve.",
       "Projetei um motor de rating inspirado em Elo e sensível ao placar para partidas de duplas, com ratings por grupo, snapshots históricos, fast-path append-only e recálculo histórico completo para edições, exclusões e partidas retroativas.",
       "Modelei um feed de eventos persistidos para momentos competitivos relevantes, com regras de visibilidade, lifecycle de eventos e eventos de domínio sincronizados transacionalmente para jogos apertados, atropelos e atividade de grupos.",
       "Estruturei o monorepo em torno de features e domínios de produto, com regras de negócio no backend, modelos tipados, frontend organizado por feature, documentação em estilo ADR e separação clara entre UI, API, domínio e persistência.",
