@@ -114,7 +114,7 @@ const resumeContent: Record<Language, ResumeContent> = {
           "Built production features across wallet workflows, payment API integrations, authentication logic, and user-facing financial operations.",
           "Designed and implemented an end-to-end NFT creation feature from scratch, enabling users to generate customizable NFTs in seconds without blockchain knowledge.",
           "Built the frontend from scratch for an educational platform that adapted classic literary works into comics to help students prepare for Brazilian college entrance exams.",
-          "Developed a complex mobile-like continuous web reader and a backoffice interface for managing platform content, working directly with the client to refine requirements, business rules, and design details.",
+          "Built a complex mobile-like draggable continuous web reader, solving browser performance issues for app-like long-form comic reading on the web.",
         ],
       },
       {
