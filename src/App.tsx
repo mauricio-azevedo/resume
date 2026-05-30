@@ -33,6 +33,7 @@ type ResumeContent = {
   skills: SkillGroup[];
   projectTitle: string;
   projectName: string;
+  projectDescription: string;
   projectStack: string;
   projectLiveLabel: string;
   projectRepoLabel: string;
@@ -155,7 +156,8 @@ const resumeContent: Record<Language, ResumeContent> = {
       { label: "Testing", value: "Jest, JUnit, RSpec" },
     ],
     projectTitle: "Selected Project",
-    projectName: "BeachRank — Mobile-first sports ranking platform",
+    projectName: "BeachRank",
+    projectDescription: "Mobile-first sports ranking platform",
     projectStack: "Next.js, NestJS, PostgreSQL, Prisma",
     projectLiveLabel: "Live",
     projectRepoLabel: "Repo",
@@ -271,7 +273,8 @@ const resumeContent: Record<Language, ResumeContent> = {
       { label: "Testes", value: "Jest, JUnit, RSpec" },
     ],
     projectTitle: "Projeto Selecionado",
-    projectName: "BeachRank — Plataforma mobile-first de ranking esportivo",
+    projectName: "BeachRank",
+    projectDescription: "Plataforma mobile-first de ranking esportivo",
     projectStack: "Next.js, NestJS, PostgreSQL, Prisma",
     projectLiveLabel: "Live",
     projectRepoLabel: "Repo",
@@ -296,7 +299,6 @@ const resumeContent: Record<Language, ResumeContent> = {
 function App() {
   const [language, setLanguage] = useState<Language>("en");
   const content = resumeContent[language];
-  const [projectName, ...projectNameDetails] = content.projectName.split(" — ");
 
   return (
     <main className="resume-shell">
@@ -387,10 +389,8 @@ function App() {
           <article className="project">
             <div className="project-heading">
               <h3>
-                <span className="project-name-main">{projectName}</span>
-                {projectNameDetails.length > 0 ? (
-                  <span className="project-name-detail"> — {projectNameDetails.join(" — ")}</span>
-                ) : null}
+                <span className="project-name-main">{content.projectName}</span>
+                <span className="project-name-detail"> — {content.projectDescription}</span>
                 {" · "}
                 <a href={sharedLinks.beachRankLive} target="_blank" rel="noreferrer">
                   {content.projectLiveLabel}
