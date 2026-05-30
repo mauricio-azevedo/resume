@@ -14,6 +14,7 @@ type Experience = {
   company: string;
   period: string;
   bullets: string[];
+  stack?: string;
 };
 
 type SkillGroup = {
@@ -77,9 +78,10 @@ const resumeContent: Record<Language, ResumeContent> = {
       {
         role: "Senior Full Stack Software Engineer",
         company: "Estudologia",
+        stack: "React, Next.js, Ruby on Rails",
         period: "Aug 2024 – Jan 2026",
         bullets: [
-          "Delivered production features across Ruby and React systems powering an AI-assisted education platform used daily by 10,000+ students and hundreds of teachers across dozens of schools.",
+          "Delivered production features for an AI-assisted education platform used daily by 10,000+ students and hundreds of teachers across dozens of schools.",
           "Worked on core learning workflows where AI generated assessments, analyzed performance, and helped create personalized teaching plans based on individual results.",
           "Contributed to AI-powered essay review workflows, including production fixes in an essay reading/correction microservice providing automated feedback to students.",
           "Resolved critical production issues across authentication and account-access flows, including login, password reset, and SSO microservices.",
@@ -90,11 +92,12 @@ const resumeContent: Record<Language, ResumeContent> = {
       {
         role: "Lead Full Stack Software Engineer",
         company: "Inkluziva",
+        stack: "React, Node.js, NestJS",
         period: "Feb 2024 – Aug 2024",
         bullets: [
           "Led development of a USDT trading automation platform integrated with Binance API, supporting daily buy/sell operations involving BRL 10M+ with limited supervision.",
           "Owned product and technical execution as the initial sole developer, working directly with the company owner to define trading workflows, operational requirements, and system behavior.",
-          "Built and shipped the platform’s React frontend and Node.js backend, including trading flows, Binance API integration, banking/payment API integrations, business rules, and edge-case handling.",
+          "Built and shipped the platform end to end, including trading flows, Binance API integration, banking/payment APIs, business rules, and edge-case handling.",
           "Co-designed and implemented complex financial reconciliation workflows across Binance trading operations and banking/payment APIs, covering payments, statements, transfers, withdrawals, and operational discrepancies.",
           "Automated crypto trading tax reporting, eliminating recurring manual errors and replacing full-day manual reporting work.",
           "Reduced dependency on manual trading operations previously handled by a 3-person team and later mentored a junior developer as the engineering team expanded.",
@@ -104,9 +107,10 @@ const resumeContent: Record<Language, ResumeContent> = {
       {
         role: "Mid-Level Full Stack Software Engineer",
         company: "Incript",
+        stack: "React, Angular, Node.js, NestJS",
         period: "Apr 2023 – Jan 2024",
         bullets: [
-          "Re-architected inherited React and Node.js codebases for a crypto digital wallet, improving maintainability through feature-based organization, reusable frontend components, service layers, thin controllers, and repository patterns.",
+          "Re-architected inherited codebases for a crypto digital wallet, improving maintainability with feature-based organization, reusable components, service layers, thin controllers, and repository patterns.",
           "Built production features across wallet workflows, payment API integrations, authentication logic, and user-facing financial operations.",
           "Designed and implemented an end-to-end NFT creation feature from scratch, enabling users to generate customizable NFTs in seconds without blockchain knowledge.",
           "Built the frontend from scratch for an educational platform that adapted classic literary works into comics to help students prepare for Brazilian college entrance exams.",
@@ -116,17 +120,19 @@ const resumeContent: Record<Language, ResumeContent> = {
       {
         role: "Mid-Level Front-End Software Engineer",
         company: "OpahIT",
+        stack: "Angular",
         period: "Feb 2021 – May 2021",
         bullets: [
-          "Modernized UI components and improved mobile responsiveness in Banco Fibra’s Angular web banking app, contributing to a more reliable and usable banking experience.",
+          "Modernized UI components and improved mobile responsiveness in Banco Fibra’s web banking app, contributing to a more reliable and usable banking experience.",
         ],
       },
       {
         role: "Junior Full Stack Software Engineer",
         company: "Basis S.A.",
+        stack: "Angular, Java, Spring Boot",
         period: "Dec 2018 – Sep 2020",
         bullets: [
-          "Contributed to Java and Angular features, bug fixes, and maintenance in IBAMA’s nationwide environmental licensing system for managing tree-felling and logging permits across millions of hectares of forest.",
+          "Contributed features, bug fixes, and maintenance to IBAMA’s nationwide environmental licensing system for tree-felling and logging permits across millions of hectares.",
         ],
       },
     ],
@@ -346,6 +352,7 @@ function App() {
               <div className="item-heading">
                 <p>
                   <strong>{experience.role}</strong>, <em>{experience.company}</em>
+                  {experience.stack ? <span className="role-stack"> — {experience.stack}</span> : null}
                 </p>
                 <span>{experience.period}</span>
               </div>
